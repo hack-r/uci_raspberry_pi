@@ -1,0 +1,44 @@
+~~~~~~~~~~~~~~~~~~~~~~
+
+# PWM Power Modulation
+# duty cycle is the % of time the pulse is high
+
+
+# all have the same frequency in the diagram above
+# 50hz = 20ms clock period
+# motor can't change that fast so it takes the average voltage, as if it is an analog signal controlling the analog device
+# increasing duty cycle increases perceived voltage
+
+# Servo Motor = motors whose rotation angle can be precisely controlled
+
+#50Hz frequency is normal
+#1ms width - 0 degrees
+#2ms width = 180 degrees
+#Same interface is used for remote control; receiver sends PWM to control interfaces (for instance quad copter, even tho they dont have servos)
+~~~~~~~~~~~~~~~
+# Servo Motor Wiring
+3 wires
+     # power (red)
+     # Ground (black)
+     # signal (white or yellow)
+
+PWM applied to signal wire
+Power should supply sufficient current
+
+External power supply should be used
+     ~5 Volts
+
+Raspberry Pi cannot supply enough current to drive typical motors
+     ~1 Amp
+
+External supply has power and ground wires
+     Wire external power wire to Servo power wire
+     External ground wired to Raspberry Pi ground ("common ground")
+
+
+Only pins 12 and 24 (BOARD numbering) can produce PWM signals
+
+Resistor might be used to isolate pins from servo
+
+~~~~~~~~~~~~~~~~
+
